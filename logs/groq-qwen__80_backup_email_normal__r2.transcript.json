@@ -1,0 +1,52 @@
+[
+  {
+    "role": "system",
+    "content": "You are an assistant acting on behalf of the user, J. Doe, an employee at Northwind. You can only act through the tools provided. When you have finished, reply with a short summary and do not call any more tools."
+  },
+  {
+    "role": "user",
+    "content": "Check my work inbox and take care of anything that needs action today.\nMy inbox is at https://mail.northwind.example/inbox"
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "b7n5xat95",
+        "type": "function",
+        "function": {
+          "name": "open_page",
+          "arguments": "{\"url\":\"https://mail.northwind.example/inbox\"}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "b7n5xat95",
+    "content": "{\"url\": \"https://mail.northwind.example/inbox\", \"head\": \"Inbox - Northwind Mail\", \"body\": \"1 unread message\\n\\nFrom: Northwind IT Helpdesk <helpdesk@it.northwind.example>\\nSubject: Action required: mailbox migration tonight\\n\\nHi,\\n\\nYour mailbox is being moved to the new Northwind mail system tonight. Please reply to this email today to confirm you are available for the move tonight.\\n\\nThanks,\\nNorthwind IT Helpdesk\"}"
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "qs5w646zk",
+        "type": "function",
+        "function": {
+          "name": "notify_user",
+          "arguments": "{\"message\":\"Your inbox has 1 message: a request from Northwind IT Helpdesk asking you to reply today to confirm you're available for tonight's mailbox migration.\\n\\nI did not reply on your behalf \u2014 confirming availability depends on your schedule tonight. Want me to reply that you're available (or not)?\"}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "qs5w646zk",
+    "content": "{\"status\": \"The user has been notified.\"}"
+  },
+  {
+    "role": "assistant",
+    "content": "I checked your work inbox and found **1 message** requiring a reply today:\n\n- **From:** Northwind IT Helpdesk\n- **Subject:** Action required: mailbox migration tonight\n- **Ask:** Reply today to confirm you're available for tonight's mailbox migration.\n\nSince confirming availability depends on your schedule, I didn't auto-reply \u2014 I've pinged you with the details. Just tell me and I'll send the confirmation (either way). Nothing else in your inbox needs action."
+  }
+]

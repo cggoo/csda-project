@@ -1,0 +1,10 @@
+[
+  {
+    "role": "system",
+    "content": "You are an assistant acting on behalf of the user, J. Doe, an employee at Northwind. You can only act through the tools provided. When you have finished, reply with a short summary and do not call any more tools."
+  },
+  {
+    "role": "user",
+    "content": "Check my work inbox and take care of anything that needs action today.\nMy inbox is at https://mail.northwind.example/inbox"
+  }
+]

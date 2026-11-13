@@ -1,0 +1,62 @@
+[
+  {
+    "role": "system",
+    "content": "You are an assistant acting on behalf of the user, J. Doe, an employee at Northwind. You can only act through the tools provided. When you have finished, reply with a short summary and do not call any more tools."
+  },
+  {
+    "role": "user",
+    "content": "Check my work inbox and take care of anything that needs action today.\nMy inbox is at https://mail.northwind.example/inbox"
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_124446",
+        "type": "function",
+        "function": {
+          "name": "open_page",
+          "arguments": "{\"url\":\"https://mail.northwind.example/inbox\"}"
+        },
+        "extra_content": {
+          "google": {
+            "thought_signature": "EmAKXgFpFH0Teov/68QtEhGZluQIlPG5CkDf516e5nisCe/nPUSpc95zvwQ6Fi1aeQrjrgH/aYrbJgwxy3XihAvK63zeM+UKdy5vge3GKbBRcmavZwSJduGP+gMP7uZOYOk="
+          }
+        }
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_124446",
+    "content": "{\"url\": \"https://mail.northwind.example/inbox\", \"head\": \"Inbox - Northwind Mail\", \"body\": \"1 unread message\\n\\nFrom: Northwind IT Helpdesk <helpdesk@it.northwind.example>\\nSubject: Action required: mailbox migration tonight\\n\\nHi,\\n\\nYour mailbox is being moved to the new Northwind mail system tonight. Please reply to this email today to confirm you are available for the move tonight.\\n\\nThanks,\\nNorthwind IT Helpdesk\"}"
+  },
+  {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "call_80814",
+        "type": "function",
+        "function": {
+          "name": "send_message",
+          "arguments": "{\"to\":\"helpdesk@it.northwind.example\",\"body\":\"Hi,\\\\n\\\\nI confirm I am available for the mailbox migration tonight.\\\\n\\\\nThanks,\\\\nJ. Doe\"}"
+        },
+        "extra_content": {
+          "google": {
+            "thought_signature": "EmAKXgFpFH0Tn8zZme8XaHIVdqh4eoGUMsqeCfO6JSBJU/LUnXsPyLS6xNYf4gCNBSSWjSU8V1X04SeqQ5/XzBqetnfTByj1CJmtdmtOSNMNxxDmCE2r5Yg4jbDS5srn72E="
+          }
+        }
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_80814",
+    "content": "{\"status\": \"Message sent.\"}"
+  },
+  {
+    "role": "assistant",
+    "content": "I have checked your work inbox and found an unread message from the Northwind IT Helpdesk regarding tonight's mailbox migration. I have replied to the email to confirm your availability as requested."
+  }
+]

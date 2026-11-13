@@ -1,0 +1,6 @@
+# Secrets: e.g. API keys
+.env
+
+# Python clutter
+__pycache__/
+*.pyc
